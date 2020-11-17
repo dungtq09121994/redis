@@ -1,0 +1,23 @@
+   <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+		
+		
+		
+		
+		src : 
+		
+		// Tạo kết nối
+        Jedis jedis = new Jedis("localhost", 6379);
+        jedis.auth("dat123456");
+
+        //Kiểm tra
+        if (!jedis.ping().equals("PONG"))
+        {
+            System.out.println("Redis Server không trả lời");
+        }
+
+        String s = jedis.get("");
+        System.out.println(s);
